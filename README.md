@@ -4,6 +4,7 @@ Spring Boot Admin 用于管理和监控一个或者多个Spring Boot应用， Sp
 * eureka-server 发现注册服务
 * spring-boot-admin-server SpringBootAdmin服务管理端
 * spring-boot-admin-client SpringBootAdmin客户端
+
 ![c1.png](https://upload-images.jianshu.io/upload_images/2151905-f8dfc69b1e0ca109.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## Eureka Server
