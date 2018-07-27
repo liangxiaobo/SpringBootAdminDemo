@@ -1,0 +1,49 @@
+server:
+  port: 8766
+spring:
+  application:
+    name: admin-server
+  security:
+    user:
+      name: "admin"
+      password: "admin"
+
+  ###################
+  # 邮件通知配置 此处暂时注释掉，如果要运行的话请先配置好，否此控制台会报错
+  ##################
+#  mail:
+#    host: smtphm.qiye.163.com
+#    username: # 用户名
+#    password: # 密码
+#  boot:
+#    admin:
+#      notify:
+#        mail:
+#          to: # 收件人
+#          enabled: true
+#          from: # 发件人
+
+
+eureka:
+  instance:
+      leaseRenewalIntervalInSeconds: 10
+      health-check-url-path: /actuator/health
+      prefer-ip-address: true
+      metadata-map:
+            user.name: ${spring.security.user.name}
+            user.password: ${spring.security.user.password}
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+
